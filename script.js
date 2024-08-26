@@ -29,7 +29,7 @@ const data = [
       "“Fasal Amrit has helped me keep the soil moist and soft and has helped maize crops grow for more than 15-20 days without water.”",
     village: "Village: Bansiwara",
     crop: "Crop: Maize",
-    cropImage: "",
+    cropImage: '<img src="imgs/maize.webp" />',
     link: '<a href="https://www.youtube.com/watch?v=7z7AfqkP8Fs&list=PLWBP8RwYJuR6fHeU1kAa97mupkejhXCW0&index=28" target="_blank">Watch Full Video</a>',
   },
   {
@@ -41,6 +41,46 @@ const data = [
     crop: "Occupation: Forestry labour",
     cropImage: '',
     link: '<a href="https://www.youtube.com/watch?v=TpsPxEX2NfA&list=PLWBP8RwYJuR6fHeU1kAa97mupkejhXCW0&index=23" target="_blank">Watch Full Video</a>',
+  },
+  {
+    img: "imgs/khumaji.webp",
+    name: "Khuma Ji",
+    statement:
+      "There has been no rain in the area for more than 40 days, yet my plants have grown taller and better.",
+    village: "",
+    crop: "Occupation: Forestry labour",
+    cropImage: '',
+    link: '<a href="https://www.youtube.com/watch?v=1Id7_wcYDRE&list=PLWBP8RwYJuR6fHeU1kAa97mupkejhXCW0&index=25" target="_blank">Watch Full Video</a>',
+  },
+  {
+    img: "imgs/bansidhar.webp",
+    name: "Banshi Dhar Sharma",
+    statement:
+      "Fasal Amrit helped me maintain a balance between water and moisture levels in the soil. It also helped my plants grow better and live longer.",
+    village: "",
+    crop: "Organization: Arpan Seva Sansthan",
+    cropImage: '',
+    link: '<a href="https://www.youtube.com/watch?v=hRDOjCtaTCM&list=PLWBP8RwYJuR6fHeU1kAa97mupkejhXCW0&index=26" target="_blank">Watch Full Video</a>',
+  },
+  {
+    img: "imgs/ramesh.webp",
+    name: "Ramesh Chand Sharma",
+    statement:
+      "“With the help of Fasal Amrit, I was able to help my plants grow better even with less water.”",
+    village: "",
+    crop: "Organization: Arpan Seva Sansthan",
+    cropImage: '',
+    link: '<a href="https://www.youtube.com/watch?v=mwYup4rmQg8&list=PLWBP8RwYJuR6fHeU1kAa97mupkejhXCW0&index=27" target="_blank">Watch Full Video</a>',
+  },
+  {
+    img: "imgs/shyamlal.webp",
+    name: "Shyamlal Dangi",
+    statement:
+      "“Recently, with Fasal Amrit, my tomato profits increased by almost 45%! My tomatoes grew bigger, taller, and I used 15% less water.”",
+    village: "Village: Mirzapur",
+    crop: "Crop: Tomato",
+    cropImage: '<img src="imgs/tomato.webp" />',
+    link: '<a href="https://www.youtube.com/watch?v=17W_BG948SI&list=PLWBP8RwYJuR6fHeU1kAa97mupkejhXCW0&index=22" target="_blank">Watch Full Video</a>',
   },
   // Add additional data for new images
 ];
