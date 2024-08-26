@@ -86,7 +86,7 @@ const data = [
 ];
 
 let currentIndex = 0;
-const visibleItems = 3;
+const visibleItems = 7;
 const totalItems = carouselImages.length;
 
 function updateCarousel(index) {
