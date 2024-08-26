@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Carousel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General reset and styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #2f4f2f; /* Adjust this to your desired green shade */
+        }
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 90%;
+        }
+        .carousel-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .carousel-images img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .carousel-images img.active {
+            transform: scale(1.2);
+            border: 5px solid white; /* Add a border to the active image */
+        }
+        .carousel-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .carousel-content h2 {
+            margin: 0;
+            color: #2f4f2f;
+        }
+        .carousel-content p {
+            color: #2f4f2f;
+            margin: 10px 0;
+        }
+        .carousel-content button {
+            background: transparent;
+            border: 2px solid #2f4f2f;
+            color: #2f4f2f;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .carousel-content button:hover {
+            background: #2f4f2f;
+            color: white;
+        }
+        .carousel-controls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .carousel-controls i {
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="image1.png" alt="Image 1" class="active">
+                <img src="image2.png" alt="Image 2">
+                <img src="image3.png" alt="Image 3">
+                <img src="image4.png" alt="Image 4">
+                <img src="image5.png" alt="Image 5">
+            </div>
+            <div class="carousel-content">
+                <h2>Sambhu Singh</h2>
+                <p>“Fasal Amrit and my crops survived for longer periods without water. I will definitely use it again in the future.”</p>
+                <p>Village: Bansiwara Crop: Maize</p>
+                <button>Watch the full video</button>
+            </div>
+            <div class="carousel-controls">
+                <i class="fas fa-chevron-left" id="prevBtn"></i>
+                <i class="fas fa-chevron-right" id="nextBtn"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.carousel-images img');
+        const content = document.querySelector('.carousel-content');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            images.forEach((img, index) => {
+                img.classList.remove('active');
+                if (index === currentIndex) {
+                    img.classList.add('active');
+                }
+            });
+
+            // Update content based on active image
+            // You can customize this part as needed
+            if (currentIndex === 0) {
+                content.innerHTML = `
+                    <h2>Sambhu Singh</h2>
+                    <p>“Fasal Amrit and my crops survived for longer periods without water. I will definitely use it again in the future.”</p>
+                    <p>Village: Bansiwara Crop: Maize</p>
+                    <button>Watch the full video</button>
+                `;
+            } else if (currentIndex === 1) {
+                content.innerHTML = `
+                    <h2>Khuma Ji</h2>
+                    <p>“There has been no rain in the area for more than 40 days, yet my plants have grown taller and better.”</p>
+                    <p>Occupation: Forestry labour</p>
+                    <button>Watch the full video</button>
+                `;
+            } else if (currentIndex === 2) {
+                content.innerHTML = `
+                    <h2>Another Farmer</h2>
+                    <p>“My crops are thriving thanks to the innovative solutions provided.”</p>
+                    <p>Village: XYZ Crop: Wheat</p>
+                    <button>Watch the full video</button>
+                `;
+            }
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateCarousel();
+        });
+
+        // Initialize carousel
+        updateCarousel();
+    </script>
+</body>
+</html>
